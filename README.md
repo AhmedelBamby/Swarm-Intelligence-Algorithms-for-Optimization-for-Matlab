@@ -1,8 +1,8 @@
 # Swarm Intelligence Algorithms for Optimization in MATLAB
 
-[![MATLAB](https://img.shields.io/badge/MATLAB-R2020a%2B-orange.svg)](https://www.mathworks.com/products/matlab.html)
+[![MATLAB](https://img.shields.io/badge/MATLAB-R2024a%2B-orange.svg)](https://www.mathworks.com/products/matlab.html)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
-[![Version](https://img.shields.io/badge/Version-3.0-green.svg)]()
+[![Version](https://img.shields.io/badge/Version-5.0-green.svg)]()
 [![Algorithms](https://img.shields.io/badge/Algorithms-5-blue.svg)]()
 
 ## 📋 Table of Contents
