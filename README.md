@@ -7,25 +7,27 @@
 
 ## 📋 Table of Contents
 
-- [Overview](#overview)
-- [Algorithm Collection](#algorithm-collection)
-- [Mathematical Foundations](#mathematical-foundations)
-- [Algorithm Comparison](#algorithm-comparison)
-- [Key Features](#key-features)
-- [System Architecture](#system-architecture)
-- [Installation](#installation)
-- [Algorithm Examples](#algorithm-examples)
-- [Detailed Usage](#detailed-usage)
-- [Configuration](#configuration)
-- [Optimization Functions](#optimization-functions)
-- [Results and Visualization](#results-and-visualization)
-- [Performance Features](#performance-features)
-- [File Structure](#file-structure)
-- [Advanced Features](#advanced-features)
-- [Troubleshooting](#troubleshooting)
-- [Contributing](#contributing)
-- [License](#license)
-- [Contact](#contact)
+- [Overview](#-overview)
+- [Algorithm Collection](#-algorithm-collection)
+- [Mathematical Foundations](#-mathematical-foundations)
+- [Algorithm Comparison](#-algorithm-comparison)
+- [Key Features](#-key-features)
+- [System Architecture](#️-system-architecture)
+- [Installation](#️-installation)
+- [Quick Start](#-quick-start)
+- [Algorithm Examples](#-algorithm-examples)
+- [Detailed Usage](#-detailed-usage)
+- [Configuration](#️-configuration)
+- [Optimization Functions](#-optimization-functions)
+- [Results and Visualization](#-results-and-visualization)
+- [Performance Features](#-performance-features)
+- [File Structure](#-file-structure)
+- [Advanced Features](#-advanced-features)
+- [Troubleshooting](#-troubleshooting)
+- [Contributing](#-contributing)
+- [License](#-license)
+- [Contact](#-contact)
+- [References and Citations](#-references-and-citations)
 
 ## 🔬 Overview
 
@@ -658,65 +660,7 @@ fprintf('  p-value: %.4f\n', p);
 fprintf('  Significantly different: %s\n', char("No" + (h > 0) * ["", ", Yes"]));
 ```
 
-## 🛠️ Installation
-
-### Prerequisites
-- **MATLAB R2020a or later**
-- **Parallel Computing Toolbox** (recommended for parallel versions)
-- **Statistics and Machine Learning Toolbox** (for advanced statistical analysis)
-- **Simulink** (for the objective function simulation models)
-- **Control System Toolbox** (for controller design and analysis)
-
-### Setup Steps
-
-1. **Clone the Repository**
-   ```bash
-   git clone https://github.com/AhmedelBamby/Swarm-Intelligence-Algorithms-for-Optimization-for-Matlab.git
-   cd Swarm-Intelligence-Algorithms-for-Optimization-for-Matlab
-   ```
-
-2. **MATLAB Path Configuration**
-   ```matlab
-   % Add all algorithm directories to MATLAB path
-   addpath(genpath(pwd));
-   
-   % Verify toolboxes
-   ver('parallel')
-   ver('stats')
-   ver('simulink')
-   ver('control')
-   
-   % Check available cores for parallel processing
-   feature('numcores')
-   ```
-
-3. **Simulink Model Setup**
-   Each algorithm folder contains the appropriate Simulink models:
-   - `h.slx` or `sc_pi.slx`: Controller simulation models
-   - Output variables: `dF1` (current error), `dF2` (voltage error)  
-   - Input parameters: `k1`, `k2`, `k3`, `k4` (controller gains)
-
-4. **Directory Structure Verification**
-   ```matlab
-   % Check algorithm directories
-   if exist('ABC Algorithm Serialized Edition', 'dir')
-       fprintf('✓ ABC Serial Edition found\n');
-   end
-   if exist('Artificial Bee Colony Swarm Agorithm Parallel Version', 'dir')
-       fprintf('✓ Enhanced ABC found\n');
-   end
-   if exist('Grey Wolf Optimization Algorithm', 'dir')
-       fprintf('✓ GWO algorithms found\n');
-   end
-   if exist('Sine Cosine Algorithm Serialized Version', 'dir')
-       fprintf('✓ SCA Serial found\n');
-   end
-   if exist('SCA Parallel Version', 'dir')
-       fprintf('✓ SCA Parallel found\n');
-   end
-   ```
-
-## 📚 Detailed Usage
+## 📖 Detailed Usage
 
 ### Algorithm Selection Guide
 
@@ -1202,8 +1146,6 @@ Generated Results/
 │   └── plots_YYYY_MM_DD_HHMMSS/  # PNG/image files
 └── Optimization_History/          # Algorithm-specific history files
 ```
-
-## � Troubleshooting
 
 ### Common Issues and Solutions
 
