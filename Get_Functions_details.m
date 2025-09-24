@@ -1,0 +1,84 @@
+function [lb, ub, dim, fobj] = Get_Functions_details(F)
+% ======================================================================
+% ENHANCED FUNCTION DETAILS WITH IMPROVED LOGGING
+% Features:
+%   - More detailed parameter descriptions
+%   - Better formatted output
+%   - Consistent with main ABC optimization code
+% ======================================================================
+
+fprintf('\n=== Loading function details for: %s ===\n', F);
+
+switch F
+    case 'F1'
+        fobj = @F1;
+        lb = [0.01, 0.1, 0.01, 0.01];
+        ub = [4.5, 500, 10, 700]; 
+        dim = 4;
+        
+        % Display parameter information
+        fprintf('Function loaded successfully:\n');
+        fprintf('  Dimension: %d\n', dim);
+        fprintf('  Parameter Bounds:\n');
+        fprintf('    %-10s: [%.2f, %.2f]\n', 'Kp_I – Proportional gain for the current controller', lb(1), ub(1));
+        fprintf('    %-10s: [%.2f, %.2f]\n', 'Ki_I – Integral gain for the current controller', lb(2), ub(2));
+        fprintf('    %-10s: [%.2f, %.2f]\n', 'Kp_v – Proportional gain for the voltage controller', lb(3), ub(3));
+        fprintf('    %-10s: [%.2f, %.2f]\n', 'Ki_v – Integral gain for the voltage controller', lb(4), ub(4));
+        
+    otherwise
+        error('Unknown function specified: %s', F);
+end
+
+fprintf('Function details loading complete.\n');
+end
+
+function o = F1(x)
+% ======================================================================
+% ENHANCED OBJECTIVE FUNCTION WITH DETAILED SIMULATION LOGGING
+% Features:
+%   - Detailed parameter assignment logging
+%   - Simulation progress tracking
+%   - Error metric explanation
+% ======================================================================
+
+% Display parameter assignment
+fprintf('\n=== Evaluating F1 with parameters ===\n');
+fprintf('  k1: %.4f Kp_I – Proportional gain for the current controller\n', x(1));
+fprintf('  k2: %.4f  Ki_I – Integral gain for the current controller\n', x(2));
+fprintf('  k3: %.4f Kp_v – Proportional gain for the voltage controller\n', x(3));
+fprintf('  k4: %.4f Ki_v – Integral gain for the voltage controller\n', x(4));
+
+% Assign parameters to workspace
+global k1 k2 k3 k4 nerr1 nerr2 o
+k1 = x(1);
+k2 = x(2);
+k3 = x(3);
+k4 = x(4);
+
+assignin('base', 'k1', x(1));
+assignin('base', 'k2', x(2));
+assignin('base', 'k3', x(3));
+assignin('base', 'k4', x(4));
+
+% Run simulation with progress feedback
+fprintf('Starting simulation...\n');
+simStart = tic;
+sim('h');
+simTime = toc(simStart);
+fprintf('Simulation completed in %.2f seconds\n', simTime);
+
+% Calculate objective function
+nerr1 = norm(dF1); assignin('base','nerr1',nerr1);  % Current error norm
+nerr2 = norm(dF2); assignin('base','nerr2',nerr2); % Voltage error norm
+o = nerr1 + nerr2;  assignin('base','o',o);% Combined objective
+
+% Display results
+fprintf('Objective function results:\n');
+fprintf('  Current error norm: %.4f\n', nerr1);
+fprintf('  Voltage error norm: %.4f\n', nerr2);
+fprintf('  Total objective: %.4f\n', o);
+fprintf('___________________________\n\n');
+
+% Alternative objective function (commented out)
+% o = trapz(T,T.*((dF1.^2)+(dF2.^2)));  % ITSE metric
+end
