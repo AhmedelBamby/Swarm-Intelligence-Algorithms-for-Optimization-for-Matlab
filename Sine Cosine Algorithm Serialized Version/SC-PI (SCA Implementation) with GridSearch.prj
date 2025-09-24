@@ -1,0 +1,117 @@
+<deployment-project plugin="plugin.apptool" plugin-version="1.0">
+  <configuration build-checksum="2313419283" file="D:\Work\New folder (2)\SCA Work\SC-PI (SCA Implementation) with GridSearch.prj" location="D:\Work\New folder (2)\SCA Work" name="SC-PI (SCA Implementation) with GridSearch" target="target.mlapps" target-name="Package App">
+    <param.appname>SC-PI (SCA Implementation) with GridSearch</param.appname>
+    <param.authnamewatermark>Eng.Ahmed Hany ElBamby</param.authnamewatermark>
+    <param.email>ahmedelbamby1102003@gmail.com</param.email>
+    <param.company />
+    <param.icon />
+    <param.icons />
+    <param.summary>Developer : Ahmed Hany ElBamby
+Date : 26-April-2025
+Work Email : ahmedhanyelbamby@gmail.com
+contact email : ahmedelbamby1102003@gmail.com</param.summary>
+    <param.description>This Package Contains the Essential Functions and Scripts to maintain and Experiment the SCA Algorithm on SC-PI Simulink Model.you can make stress test with Delightfull Visualizations
+and make single Validation and use Sine-Cosine Optimization Algorithm with using Multiple or Single GridSearch Algorithm with Ease of Tracking and Exporting all the Values into Excel Files</param.description>
+    <param.screenshot />
+    <param.version>1.0</param.version>
+    <param.products.name />
+    <param.products.id />
+    <param.products.version />
+    <param.platforms />
+    <param.output>D:\Work\New folder (2)\Packages</param.output>
+    <param.guid>abf7a4c4-3854-4df2-bc56-3cd8db08bb72</param.guid>
+    <unset>
+      <param.email />
+      <param.company />
+      <param.icon />
+      <param.icons />
+      <param.screenshot />
+      <param.version />
+      <param.products.name />
+      <param.products.id />
+      <param.products.version />
+      <param.platforms />
+    </unset>
+    <fileset.main>
+      <file>${PROJECT_ROOT}\main.m</file>
+    </fileset.main>
+    <fileset.depfun>
+      <file>${PROJECT_ROOT}\Get_Functions_details.p</file>
+      <file>${PROJECT_ROOT}\help_plot_sca.p</file>
+      <file>${PROJECT_ROOT}\initialization.p</file>
+      <file>${PROJECT_ROOT}\logging_SCA.p</file>
+      <file>${PROJECT_ROOT}\SCA.p</file>
+    </fileset.depfun>
+    <fileset.resources>
+      <file>${PROJECT_ROOT}\Get_Functions_details.m</file>
+      <file>${PROJECT_ROOT}\help_plot_sca.m</file>
+      <file>${PROJECT_ROOT}\initialization.m</file>
+      <file>${PROJECT_ROOT}\logging_SCA.m</file>
+      <file>${PROJECT_ROOT}\power_PVarray_250kW_param.m</file>
+      <file>${PROJECT_ROOT}\SCA.m</file>
+      <file>${PROJECT_ROOT}\stress_test.m</file>
+      <file>${PROJECT_ROOT}\test.m</file>
+    </fileset.resources>
+    <fileset.package />
+    <build-deliverables>
+      <file location="D:\Work\New folder (2)" name="Packages" optional="false">D:\Work\New folder (2)\Packages</file>
+    </build-deliverables>
+    <workflow />
+    <matlab>
+      <root>C:\Program Files\MATLAB\R2024a</root>
+      <toolboxes>
+        <toolbox name="matlabcoder" />
+        <toolbox name="embeddedcoder" />
+        <toolbox name="gpucoder" />
+        <toolbox name="fixedpoint" />
+        <toolbox name="matlabhdlcoder" />
+        <toolbox name="neuralnetwork" />
+      </toolboxes>
+      <toolbox>
+        <matlabcoder>
+          <enabled>true</enabled>
+        </matlabcoder>
+      </toolbox>
+      <toolbox>
+        <embeddedcoder>
+          <enabled>true</enabled>
+        </embeddedcoder>
+      </toolbox>
+      <toolbox>
+        <gpucoder>
+          <enabled>true</enabled>
+        </gpucoder>
+      </toolbox>
+      <toolbox>
+        <fixedpoint>
+          <enabled>true</enabled>
+        </fixedpoint>
+      </toolbox>
+      <toolbox>
+        <matlabhdlcoder>
+          <enabled>true</enabled>
+        </matlabhdlcoder>
+      </toolbox>
+      <toolbox>
+        <neuralnetwork>
+          <enabled>true</enabled>
+        </neuralnetwork>
+      </toolbox>
+    </matlab>
+    <platform>
+      <unix>false</unix>
+      <mac>false</mac>
+      <windows>true</windows>
+      <win2k>false</win2k>
+      <winxp>false</winxp>
+      <vista>false</vista>
+      <linux>false</linux>
+      <solaris>false</solaris>
+      <osver>10.0</osver>
+      <os32>false</os32>
+      <os64>true</os64>
+      <arch>win64</arch>
+      <matlab>true</matlab>
+    </platform>
+  </configuration>
+</deployment-project>

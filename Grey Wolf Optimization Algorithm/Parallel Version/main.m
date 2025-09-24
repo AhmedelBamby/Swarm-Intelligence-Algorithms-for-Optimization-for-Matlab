@@ -1,0 +1,57 @@
+% Main optimization script for SC-PI controller tuning
+clear all;
+close all;
+clc;
+% Add this right after 'clc' if you want explicit parallel pool control
+if isempty(gcp('nocreate'))
+    parpool; % Start parallel pool
+end
+%% ======================================================================
+% Display Professional Information
+% ======================================================================
+fprintf('\n');
+fprintf('============================================================\n');
+fprintf('                    OPTIMIZATION PROJECT                     \n');
+fprintf('============================================================\n');
+fprintf('Name: Eng. Ahmed ElBamby\n');
+fprintf('College: AAST - Artificial Intelligence (Robotics)\n');
+fprintf('Algorithm: Grey Wolf Optimization Algorithm\n');
+fprintf('Work Email: ahmedelbamby1102003@gmail.com\n');
+fprintf('Work Phone Number: +201096562363\n');
+fprintf('============================================================\n\n');
+
+
+% Load function details for F1 (your SC-PI controller problem)
+[lb, ub, dim, fobj] = Get_Functions_details('F1');
+
+% GWO parameters
+SearchAgents_no = 10;  % Number of wolves
+Max_iter = 500;         % Maximum iterations
+totalstart = tic;
+% Run GWO optimization
+[Alpha_score, Alpha_pos, Convergence_curve] = GWO(SearchAgents_no, Max_iter, lb, ub, dim, fobj);
+
+
+
+
+totalTime = toc(totalstart);
+fprintf('\n=== Optimization Completed ===\n');
+fprintf('Total execution time: %.2f seconds (%.2f minutes)\n', totalTime, totalTime/60);
+
+% Display final results
+fprintf('\n=== Optimization Results ===\n');
+fprintf('Best Parameters Found:\n');
+fprintf('  Kp_I: %.4f\n', Alpha_pos(1));
+fprintf('  Ki_I: %.4f\n', Alpha_pos(2));
+fprintf('  Kp_v: %.4f\n', Alpha_pos(3));
+fprintf('  Ki_v: %.4f\n', Alpha_pos(4));
+fprintf('Best Objective Value: %.4f\n', Alpha_score);
+
+
+% Plot convergence curve
+figure;
+plot(Convergence_curve, 'LineWidth', 2);
+title('GWO Convergence Curve');
+xlabel('Iteration');
+ylabel('Best Objective Value');
+grid on;
